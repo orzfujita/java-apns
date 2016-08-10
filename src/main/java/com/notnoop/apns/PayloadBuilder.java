@@ -263,6 +263,17 @@ public final class PayloadBuilder {
     }
 
     /**
+     * With iOS10 
+     * The mutable-content fields tells iOS that the notification has content that can be changed by a service extension before delivery.
+     *
+     * @return this
+     */
+    public PayloadBuilder forNotificationServiceExtensions() {
+        aps.put("mutable-content", 1);
+        return this;
+    }
+
+    /**
      * Set the notification localized key for the alert body
      * message.
      *
